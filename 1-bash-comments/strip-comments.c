@@ -5,8 +5,8 @@
 
 int main(void) {
     int c;
-    int in_string = 0;   // inside double-quoted string?
-    int in_comment = 0;  // currently stripping a #... EOL comment?
+    int in_string = 0;
+    int in_comment = 0;
 
     while ((c = getchar()) != EOF) {
         if (in_comment) {
@@ -14,7 +14,7 @@ int main(void) {
                 putchar('\n');
                 in_comment = 0;
             }
-            continue; // suppress everything until newline
+            continue;
         }
 
         if (c == '"') {
@@ -24,7 +24,7 @@ int main(void) {
         }
 
         if (!in_string && c == '#') {
-            in_comment = 1; // start stripping until end of line
+            in_comment = 1;
             continue;
         }
 

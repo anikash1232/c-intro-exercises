@@ -71,7 +71,6 @@ static void print_chart(const int counts[ALPHA]) {
         }
     } else {
         for (int i = 0; i < ALPHA; i++) {
-            /* scale tallest bar to MAX_HEIGHT, truncating fractional parts */
             heights[i] = (int)((counts[i] * 1.0 * MAX_HEIGHT) / (double)maxc);
         }
     }
